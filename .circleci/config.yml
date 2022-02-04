@@ -1,0 +1,36 @@
+version: 2.1
+orbs: 
+  node: circleci/node@4.1.0
+  aws-cli: cicleci/aws-cli@2.0.3
+  eb: circleci/aws-elastic-beanstalk@1.0.0
+jobs:
+  build:
+    docker:
+      - image: "cimg/base:stable"
+    steps:
+      - node/install
+      - checkout 
+      - aws-cli/setup
+      - eb/setup
+      - run: 
+          name: Install Backend dependencies
+          command: 
+            cd udagram-api && npm run backend:install
+      - run:      
+          name: Backend Build
+          command:  npm run backend:build
+      - run: 
+          name: Install Frontend dependencies
+          command: 
+            npm run frontend:install
+      - run:      
+          name: Frontend Build
+          command:  npm run frontend:build 
+      - run:      
+          name: Frontend Deploy
+          command:  npm run frontend:deploy
+      - run:      
+          name: Backend Deploy
+          command:  npm run backend:deploy
+       
+
