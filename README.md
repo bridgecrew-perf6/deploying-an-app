@@ -1,21 +1,6 @@
 ## UDAGRAM
-In order to run the project properly, you need to create a .env file and add the following variables:
-````
-POSTGRES_HOST=
-PORT_DB=
-PORT=
-POSTGRES_PASSWORD=
-POSTGRES_USERNAME=
-RDS_DIALECT=
-POSTGRES_DB=
-AWS_REGION=
-AWS_PROFILE=
-AWS_BUCKET=
-URL=
-AWS_ACCESS_KEY_ID=
-AWS_SECRET_ACCESS_KEY=
-JWT_SECRET=
-`````
+
+[![reem-abdelrahman](https://circleci.com/gh/reem-abdelrahman/deploying-an-app.svg?style=shield)](https://app.circleci.com/pipelines/github/reem-abdelrahman/deploying-an-app)
 
 Link of the app:
 http://my-udagram.s3-website.us-east-2.amazonaws.com
