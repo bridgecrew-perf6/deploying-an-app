@@ -42,7 +42,8 @@ workflows:
     jobs:
       filters:
         branches:
-          only: - main
+          only: 
+            - main
        
        
 
